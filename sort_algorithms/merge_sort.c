@@ -8,7 +8,7 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void merge(int arr[], int l, int m, int r)
+void merge(value_type arr[], int l, int m, int r)
 {
 	int i;
 	int j; 
@@ -70,7 +70,7 @@ void merge(int arr[], int l, int m, int r)
 
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-void merge_sort(int arr[], int l, int r)
+void merge_sort(value_type arr[], int l, int r)
 {
 	if (l < r) 
 	{
@@ -89,7 +89,7 @@ void merge_sort(int arr[], int l, int r)
 /* Driver code */
 int main()
 {
-	int arr[] = {22, 11, 33, 55, 66, 77};
+	value_type arr[] = {22, 11, 33, 55, 66, 77};
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
 
 	printf("Given array is \n");

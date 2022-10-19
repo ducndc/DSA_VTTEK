@@ -4,7 +4,8 @@
 
 #include "support.h"
 
-void selection_sort(int arr[], int n)
+/* Implement selection sort with a array */
+void selection_sort(value_type arr[], int n)
 {
 	int i;
 	int j;
@@ -33,7 +34,7 @@ void selection_sort(int arr[], int n)
 // Driver program to test above functions
 int main()
 {
-	int arr[] = {64, 25, 12, 22, 11};
+	value_type arr[] = {64, 25, 12, 22, 11};
 	int n = sizeof(arr) / sizeof(arr[0]);
 	selection_sort(arr, n);
 	printf("Sorted array: \n");

@@ -4,7 +4,7 @@
 #include "support.h"
 
 /* To heapify a subtree rooted with node i */
-void heapify(int arr[], int N, int i)
+void heapify(value_type arr[], int N, int i)
 {
 	int largest = i;
 	int left = 2 * i + 1;
@@ -26,7 +26,7 @@ void heapify(int arr[], int N, int i)
 }
 
 /* main function to do heap sort */
-void heap_sort(int arr[], int N)
+void heap_sort(value_type arr[], int N)
 {
 	for (int i = N/2 - 1; i >= 0; i--)
 	{
@@ -41,7 +41,7 @@ void heap_sort(int arr[], int N)
 
 int main()
 {
-	int arr[] = {44, 11, 99, 88, 44, 77, 33};
+	value_type arr[] = {44, 11, 99, 88, 44, 77, 33};
 	int N = sizeof(arr) / sizeof(arr[0]);
 	heap_sort(arr, N);
 

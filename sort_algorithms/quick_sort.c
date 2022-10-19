@@ -3,7 +3,8 @@
 
 #include "support.h"
 
-int get_partition(int arr[], int low, int hight)
+/* Get a partition in array */
+int get_partition(value_type arr[], int low, int hight)
 {
 	int pivot = arr[hight];
 	int i = (low - 1);
@@ -21,7 +22,8 @@ int get_partition(int arr[], int low, int hight)
 	return (i + 1);
 }
 
-void quick_sort(int arr[], int low, int hight)
+/* Implement quick sort with array*/
+void quick_sort(value_type arr[], int low, int hight)
 {
 	if (low < hight)
 	{
@@ -34,7 +36,7 @@ void quick_sort(int arr[], int low, int hight)
 
 int main()
 {
-	int arr[] = {11, 33, 22, 88, 22, 99, 77, 66};
+	value_type arr[] = {11, 33, 22, 88, 22, 99, 77, 66};
 	int n = sizeof(arr) / sizeof(arr[0]);
 	printf("%d ", n);
 	quick_sort(arr, 0, n-1);
