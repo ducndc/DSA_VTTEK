@@ -9,6 +9,7 @@
 
 typedef struct stack *stack_t;
 typedef int value_type;
+
 /* Public function in stack */
 void stack_create(stack_t p_stack);
 int stack_push(stack_t p_stack, value_type value);
