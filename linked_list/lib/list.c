@@ -4,12 +4,14 @@
  * author: Duc
  * 
  * */
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
 #include "list.h"
 
+/* Add a node to the list */
 void 
 add(list_t *list, value_type data, int position)
 {
@@ -35,13 +37,13 @@ add(list_t *list, value_type data, int position)
             node = node->next;
             i++;
         }
-
         node_t *new_node = list->create_node(data);
         list->insert_before(list, node, new_node);
         list->size++;
     }
 }
 
+/* Add a node to the first of list */
 void 
 add_first(list_t *list, value_type data)
 {
@@ -66,6 +68,7 @@ add_first(list_t *list, value_type data)
     list->size++;
 }
 
+/* Add a node to the last of list */
 void 
 add_last(list_t *list, value_type data)
 {
@@ -90,6 +93,7 @@ add_last(list_t *list, value_type data)
     list->size++;
 }
 
+/* Insert a node to the first of list */
 void 
 insert_before(list_t *list, node_t *node, node_t *new_node)
 {
@@ -100,6 +104,7 @@ insert_before(list_t *list, node_t *node, node_t *new_node)
     new_node->prev = prev;
 }
 
+/* Get data of a node of the list */
 value_type 
 get(list_t *list, int position)
 {
@@ -135,6 +140,7 @@ get(list_t *list, int position)
     }
 }
 
+/* Get data of a node of the first of list*/
 value_type 
 get_first(list_t *list)
 {
@@ -146,6 +152,7 @@ get_first(list_t *list)
     return (list->head->data);
 }
 
+/* Get data of a node of the last of list*/
 value_type 
 get_last(list_t *list)
 {
@@ -161,6 +168,7 @@ get_last(list_t *list)
     return list->tail->data;
 }
 
+/* Remove a node of the list */
 int 
 list_remove(list_t *list, int position)
 {
@@ -205,6 +213,7 @@ list_remove(list_t *list, int position)
     }
 }
 
+/* Remove a node of the first of list */
 value_type 
 remove_first(list_t *list)
 {
@@ -232,6 +241,7 @@ remove_first(list_t *list)
     return data;
 }
 
+/* Remove a node of the last of list */
 value_type 
 remove_last(list_t *list)
 {
@@ -259,6 +269,7 @@ remove_last(list_t *list)
     }
 }
 
+/* Create the linked list */
 list_t 
 create_linked_list()
 {
@@ -278,6 +289,7 @@ create_linked_list()
     return list;
 }
 
+/* Create a node */
 node_t 
 *create_node(value_type data)
 {
