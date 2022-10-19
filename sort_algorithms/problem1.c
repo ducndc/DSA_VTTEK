@@ -25,20 +25,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* readline();
-char* ltrim(char*);
-char* rtrim(char*);
+char* read_line();
+char* l_trim(char*);
+char* r_trim(char*);
 char** split_string(char*);
 
 int parse_int(char*);
 
 /*
- * Complete the 'countSort' function below.
+ * Complete the 'count_sort' function below.
  *
  * The function accepts 2D_STRING_ARRAY arr as parameter.
  */
 void 
-countSort(int arr_rows, int arr_columns, char*** arr) 
+count_sort(int arr_rows, int arr_columns, char*** arr) 
 {
     int i;
     int j;
@@ -95,26 +95,26 @@ countSort(int arr_rows, int arr_columns, char*** arr)
 int 
 main()
 {
-    int n = parse_int(ltrim(rtrim(readline())));
+    int n = parse_int(l_trim(r_trim(read_line())));
 
     char*** arr = malloc(n * sizeof(char**));
 
     for (int i = 0; i < n; i++) 
     {
         *(arr + i) = malloc(2 * (sizeof(char*)));
-        char** arr_item_temp = split_string(rtrim(readline()));
+        char** arr_item_temp = split_string(r_trim(read_line()));
         for (int j = 0; j < 2; j++) 
         {
             char* arr_item = *(arr_item_temp + j);
             *(*(arr + i) + j) = arr_item;
         }
     }
-    countSort(n, 2, arr);
+    count_sort(n, 2, arr);
     return 0;
 }
 
 char* 
-readline() 
+read_line() 
 {
     size_t alloc_length = 1024;
     size_t data_length = 0;
@@ -173,7 +173,7 @@ readline()
 }
 
 char* 
-ltrim(char* str) 
+l_trim(char* str) 
 {
     if (!str) 
     {
@@ -193,7 +193,7 @@ ltrim(char* str)
     return str;
 }
 
-char* rtrim(char* str) 
+char* r_trim(char* str) 
 {
     if (!str) 
     {
