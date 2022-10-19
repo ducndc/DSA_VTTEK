@@ -2,10 +2,10 @@ CC:= gcc
 CFLAG:= -Wall
 LDFLAGS:=
 OBJECTFILES_1:= lib/vector.o src/suffix_structures.o 
-OBJECTFILES_2:= lib/vector.o src/problem.o
+OBJECTFILES_2:= lib/vector.o src/action_follow_k.o
 OUTPUTFILE:= 
 TARGET_1:= suffix_structures 
-TARGET_2:= problem
+TARGET_2:= action_follow_k
 
 all: $(TARGET_1) $(TARGET_2)
  
