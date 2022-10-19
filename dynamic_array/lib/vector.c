@@ -21,7 +21,8 @@ struct _vector {
 };
 
 /* create a vector */
-vector vector_create()
+vector 
+vector_create()
 {
 	vector v = (vector)malloc(sizeof(struct _vector));
 	if (NULL == v)
@@ -30,22 +31,20 @@ vector vector_create()
 		/* terminates the process by raising a SIGABRT signal */
 		abort();
 	}
-
 	v->size = 0;
 	v->capacity = INITIAL_CAPACITY;
 	v->array = (value_type*)malloc(sizeof(value_type) * v->capacity);
-	
 	if (NULL == v->array)
 	{
 		fprintf(stderr, "Not enough memory!");
 		abort();
 	}
-
 	return v;
 }
 
 /* destroy a vector */
-void vector_destroy(vector v)
+void 
+vector_destroy(vector v)
 {
 	assert(v);
 	free(v->array);
@@ -55,8 +54,8 @@ void vector_destroy(vector v)
 }
 
 /* vector double capacity */
-static
-void vector_double_capacity(vector v)
+static void 
+vector_double_capacity(vector v)
 {
 	assert(v);
 	int new_capacity = 2 * v->capacity;
@@ -78,8 +77,8 @@ void vector_double_capacity(vector v)
 }
 
 /* half capacity of vector */
-static
-void vector_half_capacity(vector v)
+static void 
+vector_half_capacity(vector v)
 {
 	assert(v);
 	if (v->capacity <= INITIAL_CAPACITY)
@@ -98,7 +97,6 @@ void vector_half_capacity(vector v)
 	{
 		new_array[i] = v->array[i];
 	}
-
 	free(v->array);
 	v->array = new_array;
 	v->capacity = new_capacity;
@@ -106,7 +104,8 @@ void vector_half_capacity(vector v)
 }
 
 /* get a vector */
-value_type vector_get(vector v, int i)
+value_type 
+vector_get(vector v, int i)
 {
 	/* if v return 0 then call to abort() */
 	assert(v);
@@ -119,7 +118,8 @@ value_type vector_get(vector v, int i)
 }
 
 /* put a vector */
-void vector_put(vector v, int i, value_type value)
+void 
+vector_put(vector v, int i, value_type value)
 {
 	assert(v);
 	if (i < 0 || i >= v->size)
@@ -131,7 +131,8 @@ void vector_put(vector v, int i, value_type value)
 }
 
 /* put vector at the middle */
-void vector_add_at(vector v, int i, value_type value)
+void 
+vector_add_at(vector v, int i, value_type value)
 {
 	assert(v);
 	if (i < 0 || i >= v->size)
@@ -152,7 +153,8 @@ void vector_add_at(vector v, int i, value_type value)
 }
 
 /* add element at the end of vector */
-void vector_add(vector v, value_type value)
+void 
+vector_add(vector v, value_type value)
 {
 	assert(v);
 	if (v->size >= v->capacity)
@@ -163,7 +165,8 @@ void vector_add(vector v, value_type value)
 }
 
 /* remove a element */
-value_type vector_remove_at(vector v, int i)
+value_type 
+vector_remove_at(vector v, int i)
 {
 	assert(v);
 	if (i < 0 || i >= v->size)
@@ -180,21 +183,24 @@ value_type vector_remove_at(vector v, int i)
 }
 
 /* Is vector empty */
-int vector_is_empty(vector v)
+int 
+vector_is_empty(vector v)
 {
 	assert(v);
 	return (v->size == 0);
 }
 
 /* Get size of a vector */
-int vector_size(vector v)
+int 
+vector_size(vector v)
 {
 	assert(v);
 	return (v->size);
 }
 
 /* Clear a vector */
-void vector_clear(vector v)
+void 
+vector_clear(vector v)
 {
 	assert(v);
 	v->size = 0;
@@ -205,7 +211,8 @@ void vector_clear(vector v)
 }
 
 /* sort a vector */
-void vector_sort(vector v)
+void 
+vector_sort(vector v)
 {
 	assert(v);
 	for (int i = 0; i < v->size; i++)
@@ -227,7 +234,8 @@ void vector_sort(vector v)
 }
 
 /* compare between 2 vectors */
-int vector_compare(vector a, vector b)
+int 
+vector_compare(vector a, vector b)
 {
 	assert(a);
 	assert(b);
@@ -242,7 +250,8 @@ int vector_compare(vector a, vector b)
 }
 
 /* find index of element */
-int vector_find(vector a, value_type value)
+int 
+vector_find(vector a, value_type value)
 {
 	for (int i = 0; i < a->size; i++)
 	{

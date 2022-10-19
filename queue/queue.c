@@ -10,7 +10,8 @@
 #include "queue.h"
 
 /* enqueue a element */
-void enqueue(queue_t *queue, value_type data)
+void 
+enqueue(queue_t *queue, value_type data)
 {
 	node_t *new_node = (node_t *)malloc(sizeof(node_t));
 	new_node->data = data;
@@ -22,7 +23,8 @@ void enqueue(queue_t *queue, value_type data)
 }
 
 /* dequeue a element */
-value_type dequeue(queue_t *queue)
+value_type 
+dequeue(queue_t *queue)
 {
 	if (queue->size == 0)
 	{
@@ -34,12 +36,12 @@ value_type dequeue(queue_t *queue)
 	tmp = queue->head;
 	queue->head = queue->head->next;
 	queue->size--;
-
 	return data;
 }
 
 /* create a queue */
-queue_t *create_queue()
+queue_t 
+*create_queue()
 {
 	queue_t queue;
 	queue.size = 0;

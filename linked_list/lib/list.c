@@ -4,14 +4,14 @@
  * author: Duc
  * 
  * */
-
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
 #include "list.h"
 
-void add(list_t *list, value_type data, int position)
+void 
+add(list_t *list, value_type data, int position)
 {
     if (position > list->size)
     {
@@ -42,7 +42,8 @@ void add(list_t *list, value_type data, int position)
     }
 }
 
-void add_first(list_t *list, value_type data)
+void 
+add_first(list_t *list, value_type data)
 {
     node_t *new_node = list->create_node(data);
     node_t *head = list->head;
@@ -65,7 +66,8 @@ void add_first(list_t *list, value_type data)
     list->size++;
 }
 
-void add_last(list_t *list, value_type data)
+void 
+add_last(list_t *list, value_type data)
 {
     node_t *new_node = list->create_node(data);
     node_t *head = list->head;
@@ -88,7 +90,8 @@ void add_last(list_t *list, value_type data)
     list->size++;
 }
 
-void insert_before(list_t *list, node_t *node, node_t *new_node)
+void 
+insert_before(list_t *list, node_t *node, node_t *new_node)
 {
     node_t *prev = node->prev;
     node->prev = new_node;
@@ -97,7 +100,8 @@ void insert_before(list_t *list, node_t *node, node_t *new_node)
     new_node->prev = prev;
 }
 
-value_type get(list_t *list, int position)
+value_type 
+get(list_t *list, int position)
 {
     if (0 == list->size)
     {
@@ -131,7 +135,8 @@ value_type get(list_t *list, int position)
     }
 }
 
-value_type get_first(list_t *list)
+value_type 
+get_first(list_t *list)
 {
     if (0 == list->size)
     {
@@ -141,7 +146,8 @@ value_type get_first(list_t *list)
     return (list->head->data);
 }
 
-value_type get_last(list_t *list)
+value_type 
+get_last(list_t *list)
 {
     if (0 == list->size)
     {
@@ -155,7 +161,8 @@ value_type get_last(list_t *list)
     return list->tail->data;
 }
 
-int list_remove(list_t *list, int position)
+int 
+list_remove(list_t *list, int position)
 {
     if (0 == list->size)
     {
@@ -198,7 +205,8 @@ int list_remove(list_t *list, int position)
     }
 }
 
-value_type remove_first(list_t *list)
+value_type 
+remove_first(list_t *list)
 {
     node_t *head = list->head;
     node_t *next;
@@ -224,7 +232,8 @@ value_type remove_first(list_t *list)
     return data;
 }
 
-value_type remove_last(list_t *list)
+value_type 
+remove_last(list_t *list)
 {
     if (0 == list->size)
     {
@@ -250,7 +259,8 @@ value_type remove_last(list_t *list)
     }
 }
 
-list_t create_linked_list()
+list_t 
+create_linked_list()
 {
     list_t list;
     list.head = NULL;
@@ -268,7 +278,8 @@ list_t create_linked_list()
     return list;
 }
 
-node_t *create_node(value_type data)
+node_t 
+*create_node(value_type data)
 {
     node_t *node = (node_t*)malloc(sizeof(node_t));
     node->data = data;
