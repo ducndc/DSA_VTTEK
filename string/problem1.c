@@ -17,7 +17,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+int 
+main()
 {
 	char A[1000000];
 	char B[1000000];
@@ -44,6 +45,4 @@ int main()
 		}
 	}
 	printf("YES");
-
-	
 }

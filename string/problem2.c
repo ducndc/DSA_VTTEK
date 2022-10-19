@@ -8,7 +8,6 @@
  * 
  * O(n)
  * */
-
 #include <stdio.h>
 
 #define MIN(x, y) ({ \
@@ -19,23 +18,21 @@
 
 #define ENDL (printf("\n"))
 
-int main(){
+int 
+main()
+{
 	int test_num;
 	scanf("%d", &test_num);
-
 	while (test_num--)
 	{
 		int N;
-		scanf("%d", &N);
-		
 		int ans = 1e9;
-
+		scanf("%d", &N);
 		for (int i = 0; i*i <= 2*(N+1); i++)
 		{
 			int j = (N + 1 + i) / (i + 1) - 1;
 			ans = MIN(ans, i + j);
 		}
-
 		printf("%d", ans);
 		ENDL;
 	}

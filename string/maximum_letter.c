@@ -13,7 +13,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+int 
+main()
 {
    char string[100000];
    int c = 0;
@@ -21,8 +22,8 @@ int main()
    int x;
    int num;
    int max_count = -1;
+
    scanf("%d", &num);
-   
    scanf("%s", &string);
 
    while (string[c] != '\0') 
@@ -34,6 +35,7 @@ int main()
       }
       c++;
    }
+
    for (c = 0; c < 26; c++)
    {
    		if (max_count < count[c])

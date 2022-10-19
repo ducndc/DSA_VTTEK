@@ -8,7 +8,9 @@
 
 #define IN(str) (scanf("%s", str))
 
-void compute_LPS_array(char* pat, int M, int* lps)
+/* Compute LPS array */
+void 
+compute_LPS_array(char* pat, int M, int* lps)
 {
     // length of the previous longest prefix suffix
     int len = 0;
@@ -44,7 +46,9 @@ void compute_LPS_array(char* pat, int M, int* lps)
     }
 }
 
-int KMP_search(char* pat, char* txt)
+/* Implement KMP search */
+int 
+KMP_search(char* pat, char* txt)
 {
     int M = strlen(pat);
     int N = strlen(txt);
@@ -89,7 +93,9 @@ int KMP_search(char* pat, char* txt)
     return count;
 }
 
-int main(){
+int 
+main()
+{
 	char P[100000];
 	char T[100000];
 	IN(P);
@@ -97,7 +103,3 @@ int main(){
 	printf("%d", KMP_search(P, T));
     return 0;
 }
-    for(int i = 0 ; i * i <= 2*(N + 1) ; i++){
-            int j = (N + 1 + i)/(i + 1) - 1;
-            ans = min(ans, i + j);
-        }
