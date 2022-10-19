@@ -5,12 +5,12 @@
 #include "support.h"
 
 /* Implement selection sort with a array */
-void selection_sort(value_type arr[], int n)
+void 
+selection_sort(value_type arr[], int n)
 {
 	int i;
 	int j;
 	int min_idx;
-
 	// One by one move boundary of unsorted subarray
 	for (i = 0; i < n-1; i++)
 	{
@@ -32,13 +32,13 @@ void selection_sort(value_type arr[], int n)
 }
 
 // Driver program to test above functions
-int main()
+int 
+main()
 {
 	value_type arr[] = {64, 25, 12, 22, 11};
 	int n = sizeof(arr) / sizeof(arr[0]);
 	selection_sort(arr, n);
 	printf("Sorted array: \n");
 	printf_array(arr, n);
-	
 	return 0;
 }

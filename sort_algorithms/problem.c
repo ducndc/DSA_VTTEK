@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /* Swap 2 position */
-void swap(int* xp, int* yp)
+void 
+swap(int* xp, int* yp)
 {
     int temp = *xp;
     *xp = *yp;
@@ -9,7 +10,8 @@ void swap(int* xp, int* yp)
 }
 
 /* Bubble sort */
-void bubble_sort(int arr[], int distance[], int n)
+void 
+bubble_sort(int arr[], int distance[], int n)
 {
     int i;
     int j;
@@ -27,11 +29,11 @@ void bubble_sort(int arr[], int distance[], int n)
     }
 }
 
-int main()
+int 
+main()
 {
 	int test_num;
 	scanf("%d", &test_num);              	                  	
-
 	while (test_num--)
 	{
 		int house_num;
@@ -41,20 +43,17 @@ int main()
 		int person[house_num];
 		int distance[house_num];
 		int sum = 0;
-
 		for (int i = 0; i < house_num; i++)
 		{
 			scanf("%d", &x[i]);
 			scanf("%d", &y[i]);
 			scanf("%d", &person[i]);
 		}
-
 		for (int i = 0; i < house_num; i++)
 		{
 			distance[i] = x[i] - y[i];
 			sum += person[i];
 		}
-
 		bubble_sort(person, distance, house_num);
 		int tmp_sum = 0;
 		int tmp_sum_1 = 0;

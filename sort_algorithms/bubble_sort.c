@@ -4,7 +4,8 @@
 #include "support.h"
 
 // A function to implement bubble sort
-void bubble_sort(value_type arr[], int n)
+void 
+bubble_sort(value_type arr[], int n)
 {
     int i;
     int j;
@@ -22,13 +23,13 @@ void bubble_sort(value_type arr[], int n)
 }
  
 // Driver program to test above functions
-int main()
+int 
+main()
 {
     value_type arr[] = {64, 34, 25, 12, 22, 11, 90};
     int n = sizeof(arr) / sizeof(arr[0]);
     bubble_sort(arr, n);
     printf("Sorted array: \n");
     printf_array(arr, n);
-    
     return 0;
 }

@@ -8,18 +8,17 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void merge(value_type arr[], int l, int m, int r)
+void 
+merge(value_type arr[], int l, int m, int r)
 {
 	int i;
 	int j; 
 	int k;
 	int n1 = m - l + 1;
 	int n2 = r - m;
-
 	/* create temp arrays */
 	int L[n1];
 	int R[n2];
-
 	/* Copy data to temp arrays L[] and R[] */
 	for (i = 0; i < n1; i++)
 	{
@@ -29,7 +28,6 @@ void merge(value_type arr[], int l, int m, int r)
 	{
 		R[j] = arr[m + 1 + j];
 	}
-
 	/* Merge the temp arrays back into arr[l..r]*/
 	i = 0; // Initial index of first subarray
 	j = 0; // Initial index of second subarray
@@ -48,7 +46,6 @@ void merge(value_type arr[], int l, int m, int r)
 		}
 		k++;
 	}
-
 	/* Copy the remaining elements of L[], if there
 	are any */
 	while (i < n1) 
@@ -57,7 +54,6 @@ void merge(value_type arr[], int l, int m, int r)
 		i++;
 		k++;
 	}
-
 	/* Copy the remaining elements of R[], if there
 	are any */
 	while (j < n2) 
@@ -70,7 +66,8 @@ void merge(value_type arr[], int l, int m, int r)
 
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-void merge_sort(value_type arr[], int l, int r)
+void 
+merge_sort(value_type arr[], int l, int r)
 {
 	if (l < r) 
 	{
@@ -87,18 +84,15 @@ void merge_sort(value_type arr[], int l, int r)
 }
 
 /* Driver code */
-int main()
+int 
+main()
 {
 	value_type arr[] = {22, 11, 33, 55, 66, 77};
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
-
 	printf("Given array is \n");
 	print_array(arr, arr_size);
-
 	merge_sort(arr, 0, arr_size - 1);
-
 	printf("\nSorted array is \n");
 	print_array(arr, arr_size);
-	
 	return 0;
 }
