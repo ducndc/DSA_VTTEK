@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "support.h"
+
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
@@ -82,18 +84,6 @@ void merge_sort(int arr[], int l, int r)
 
 		merge(arr, l, m, r);
 	}
-}
-
-/* UTILITY FUNCTIONS */
-/* Function to print an array */
-void print_array(int A[], int size)
-{
-	int i;
-	for (i = 0; i < size; i++)
-	{
-		printf("%d ", A[i]);
-	}
-	printf("\n");
 }
 
 /* Driver code */

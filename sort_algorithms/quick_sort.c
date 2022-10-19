@@ -1,14 +1,7 @@
 /* O(nlog(n)) */
 #include <stdio.h>
 
-#define endl (printf("\n"))
-
-void swap(int *a, int *b)
-{
-	int t = *a;
-	*a = *b;
-	*b = t;
-}
+#include "support.h"
 
 int get_partition(int arr[], int low, int hight)
 {
@@ -37,15 +30,6 @@ void quick_sort(int arr[], int low, int hight)
 		quick_sort(arr, low, piv-1);
 		quick_sort(arr, piv+1, hight);
 	}
-}
-
-void print_array(int arr[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	endl;
 }
 
 int main()

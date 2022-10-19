@@ -1,13 +1,8 @@
 /* O(n*n) */
 #include <stdio.h>
  
-void swap(int* xp, int* yp)
-{
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
- 
+#include "support.h"
+
 // A function to implement bubble sort
 void bubble_sort(int arr[], int n)
 {
@@ -24,17 +19,6 @@ void bubble_sort(int arr[], int n)
             }
         }
     }
-}
- 
-/* Function to print an array */
-void printf_array(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
 }
  
 // Driver program to test above functions
