@@ -82,7 +82,7 @@ countSort(int arr_rows, int arr_columns, char*** arr)
     {
         for (j = 0; j < f_array[i]; j++)
         {
-        printf("%s ", result[i][j]);
+            printf("%s ", result[i][j]);
         }
         free(result[i]);  //free subarray
     }
