@@ -11,7 +11,7 @@
 #include "stack.h"
 
 struct stack {
-     value_type value;
+     value_type data;
      stack_t *next;
 };
 
@@ -22,7 +22,7 @@ void stack_create(stack_t p_stack)
 }
 
 /* Push to the stack */
-int stack_push(stack_t p_stack, value_type value)
+int stack_push(stack_t p_stack, value_type data)
 {
 	  stack_t new_node;
 	  new_node = malloc(sizeof(stack_t));
@@ -31,7 +31,7 @@ int stack_push(stack_t p_stack, value_type value)
 	  {
 	    	return -1;
 	  }
-	  new_node->value = value;
+	  new_node->value = data;
 	  /* stack is empty */
 	  if (NULL == *p_stack)
 	  {
