@@ -40,7 +40,7 @@ int main()
 		int y[house_num];
 		int person[house_num];
 		int distance[house_num];
-		float sum = 0;
+		int sum = 0;
 
 		for (int i = 0; i < house_num; i++)
 		{
@@ -55,11 +55,16 @@ int main()
 			sum += person[i];
 		}
 
-		bubble_sort(distance, person, house_num);
-		float tmp_sum = 0;
+		bubble_sort(person, distance, house_num);
+		int tmp_sum = 0;
+		int tmp_sum_1 = 0;
 		for (int i = 0; i < house_num; i++)
 		{
 			tmp_sum += person[i];
+			if (sum % 2 != 0)
+			{
+				break;
+			}
 			if (tmp_sum == (sum / 2))
 			{
 				printf("YES\n");
@@ -69,14 +74,20 @@ int main()
 		for (int i = 1; i < house_num; i++)
 		{	
 			tmp_sum = 0;
+			tmp_sum_1 = 0;
 			for (int j = 0; j < i; j++)
 			{
 				tmp_sum += person[j];
-				if (tmp_sum == ((sum - person[i]) / 2))
-				{
-					printf("YESs\n");
-					goto break_label;
-				}
+
+			}
+			for (int j = i+1; j < house_num; j++)
+			{
+				tmp_sum_1 += person[j];
+			}
+			if (tmp_sum_1 == tmp_sum)
+			{
+				printf("YES\n");
+				goto break_label;
 			}
 		}
 		printf("NO\n");
