@@ -10,6 +10,10 @@
 
 #include "list.h"
 
+typedef struct node node_t;
+typedef struct linked_list list_t;
+typedef int value_type;
+
 /* Add a node to the list */
 void add(list_t *list, value_type data, int position)
 {

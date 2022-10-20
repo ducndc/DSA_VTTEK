@@ -7,10 +7,6 @@
 #ifndef __LIST_H__
 #define __LIST_H__
 
-typedef struct node node_t;
-typedef struct linked_list list_t;
-typedef int value_type;
-
 struct node {
     value_type data;
     node_t *prev;
