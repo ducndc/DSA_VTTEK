@@ -1,4 +1,10 @@
-/* O(n*log(n)) */
+/*
+ * sort_algorithm/merge_sort.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(nlog(n))
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,8 +14,7 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void 
-merge(value_type arr[], int l, int m, int r)
+void merge(int arr[], int l, int m, int r)
 {
 	int i;
 	int j; 
@@ -19,6 +24,7 @@ merge(value_type arr[], int l, int m, int r)
 	/* create temp arrays */
 	int L[n1];
 	int R[n2];
+
 	/* Copy data to temp arrays L[] and R[] */
 	for (i = 0; i < n1; i++)
 	{
@@ -28,10 +34,12 @@ merge(value_type arr[], int l, int m, int r)
 	{
 		R[j] = arr[m + 1 + j];
 	}
+
 	/* Merge the temp arrays back into arr[l..r]*/
 	i = 0; // Initial index of first subarray
 	j = 0; // Initial index of second subarray
 	k = l; // Initial index of merged subarray
+
 	while (i < n1 && j < n2) 
 	{
 		if (L[i] <= R[j]) 
@@ -46,6 +54,7 @@ merge(value_type arr[], int l, int m, int r)
 		}
 		k++;
 	}
+
 	/* Copy the remaining elements of L[], if there
 	are any */
 	while (i < n1) 
@@ -54,6 +63,7 @@ merge(value_type arr[], int l, int m, int r)
 		i++;
 		k++;
 	}
+
 	/* Copy the remaining elements of R[], if there
 	are any */
 	while (j < n2) 
@@ -66,8 +76,7 @@ merge(value_type arr[], int l, int m, int r)
 
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-void 
-merge_sort(value_type arr[], int l, int r)
+void merge_sort(int arr[], int l, int r)
 {
 	if (l < r) 
 	{
@@ -78,21 +87,37 @@ merge_sort(value_type arr[], int l, int r)
 		// Sort first and second halves
 		merge_sort(arr, l, m);
 		merge_sort(arr, m + 1, r);
-
 		merge(arr, l, m, r);
 	}
 }
 
-/* Driver code */
-int 
-main()
+/* UTILITY FUNCTIONS */
+/* Function to print an array */
+void print_array(int A[], int size)
 {
-	value_type arr[] = {22, 11, 33, 55, 66, 77};
+	int i;
+
+	for (i = 0; i < size; i++)
+	{
+		printf("%d ", A[i]);
+	}
+
+	printf("\n");
+}
+
+/* Driver code */
+int main()
+{
+	int arr[] = {22, 11, 33, 55, 66, 77};
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
+
 	printf("Given array is \n");
 	print_array(arr, arr_size);
+
 	merge_sort(arr, 0, arr_size - 1);
+
 	printf("\nSorted array is \n");
 	print_array(arr, arr_size);
+	
 	return 0;
 }

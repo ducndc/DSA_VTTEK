@@ -1,3 +1,11 @@
+/*
+ * sort_algorithm/count_sort.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(n*n)
+ */
+
 #if 0
     Use the counting sort to order a list of strings associated with integers. 
     If two strings are associated with the same integer, 
@@ -29,7 +37,6 @@ char* read_line();
 char* l_trim(char*);
 char* r_trim(char*);
 char** split_string(char*);
-
 int parse_int(char*);
 
 /*
@@ -37,8 +44,7 @@ int parse_int(char*);
  *
  * The function accepts 2D_STRING_ARRAY arr as parameter.
  */
-void 
-count_sort(int arr_rows, int arr_columns, char*** arr) 
+void count_sort(int arr_rows, int arr_columns, char*** arr) 
 {
     int i;
     int j;
@@ -84,16 +90,17 @@ count_sort(int arr_rows, int arr_columns, char*** arr)
         {
             printf("%s ", result[i][j]);
         }
+        
         free(result[i]);  //free subarray
     }
+
     /* free remaining allocated memory */
     free(f_array);
     free(f_array_i);
     free(result);
 }
 
-int 
-main()
+int main()
 {
     int n = parse_int(l_trim(r_trim(read_line())));
 
@@ -109,7 +116,9 @@ main()
             *(*(arr + i) + j) = arr_item;
         }
     }
+
     count_sort(n, 2, arr);
+
     return 0;
 }
 
@@ -119,6 +128,7 @@ read_line()
     size_t alloc_length = 1024;
     size_t data_length = 0;
     char* data = malloc(alloc_length);
+
     while (true) 
     {
         char* cursor = data + data_length;
@@ -169,11 +179,11 @@ read_line()
             data[data_length] = '\0';
         }
     }
+
     return data;
 }
 
-char* 
-l_trim(char* str) 
+char* l_trim(char* str) 
 {
     if (!str) 
     {
@@ -217,8 +227,7 @@ char* r_trim(char* str)
     return str;
 }
 
-char
-**split_string(char* str) 
+char **split_string(char* str) 
 {
     char** splits = NULL;
     char* token = strtok(str, " ");
@@ -242,8 +251,7 @@ char
     return splits;
 }
 
-int
-parse_int(char* str) 
+int parse_int(char* str) 
 {
     char* endptr;
     int value = strtol(str, &endptr, 10);

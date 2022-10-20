@@ -1,16 +1,28 @@
-/* O(n*n) */
+/*
+ * sort_algorithm/selection_sort.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(n*n)
+ */
 
 #include <stdio.h>
 
 #include "support.h"
 
-/* Implement selection sort with a array */
-void 
-selection_sort(value_type arr[], int n)
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+
+void selection_sort(int arr[], int n)
 {
 	int i;
 	int j;
 	int min_idx;
+
 	// One by one move boundary of unsorted subarray
 	for (i = 0; i < n-1; i++)
 	{
@@ -31,14 +43,29 @@ selection_sort(value_type arr[], int n)
 	}
 }
 
-// Driver program to test above functions
-int 
-main()
+/* Function to print an array */
+void printf_array(int arr[], int size)
 {
-	value_type arr[] = {64, 25, 12, 22, 11};
+	int i;
+
+	for (i=0; i < size; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	printf("\n");
+}
+
+// Driver program to test above functions
+int main()
+{
+	int arr[] = {64, 25, 12, 22, 11};
 	int n = sizeof(arr) / sizeof(arr[0]);
+
 	selection_sort(arr, n);
+	
 	printf("Sorted array: \n");
 	printf_array(arr, n);
+	
 	return 0;
 }
