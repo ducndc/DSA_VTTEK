@@ -12,14 +12,6 @@
 
 #define ENDL (printf("\n"))
 
-/* swap 2 position in array */
-void swap(int *a, int *b)
-{
-	int t = *a;
-	*a = *b;
-	*b = t;
-}
-
 /* To heapify a subtree rooted with node i */
 void heapify(int arr[], int N, int i)
 {
@@ -55,17 +47,6 @@ void heap_sort(int arr[], int N)
 		swap(&arr[0], &arr[i]);
 		heapify(arr, i, 0);
 	}
-}
-
-/* print a array */
-void print_array(int arr[], int N)
-{
-	for (int i = 0; i < N; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-
-	ENDL;
 }
 
 int main()

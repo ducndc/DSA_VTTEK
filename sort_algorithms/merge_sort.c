@@ -91,20 +91,6 @@ void merge_sort(int arr[], int l, int r)
 	}
 }
 
-/* UTILITY FUNCTIONS */
-/* Function to print an array */
-void print_array(int A[], int size)
-{
-	int i;
-
-	for (i = 0; i < size; i++)
-	{
-		printf("%d ", A[i]);
-	}
-
-	printf("\n");
-}
-
 /* Driver code */
 int main()
 {

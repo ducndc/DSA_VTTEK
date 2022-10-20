@@ -10,13 +10,6 @@
 
 #include "support.h"
 
-void swap(int *xp, int *yp)
-{
-	int temp = *xp;
-	*xp = *yp;
-	*yp = temp;
-}
-
 void selection_sort(int arr[], int n)
 {
 	int i;
@@ -41,19 +34,6 @@ void selection_sort(int arr[], int n)
 			}
 		}
 	}
-}
-
-/* Function to print an array */
-void printf_array(int arr[], int size)
-{
-	int i;
-
-	for (i=0; i < size; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-
-	printf("\n");
 }
 
 // Driver program to test above functions
