@@ -7,8 +7,11 @@
 #ifndef __VECTOR_H__
 #define __VECTOR_H__
 
-typedef struct _vector* vector;
-typedef int value_type;
+struct _vector {
+	value_type* array;
+	int size;
+	int capacity;
+};
 
 /* Public API in vector */
 vector vector_create();

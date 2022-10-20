@@ -13,11 +13,8 @@
 #define INITIAL_CAPACITY 64
 #define MIN(x, y) ((x < y) ? (x) : (y))
 
-struct _vector {
-	value_type* array;
-	int size;
-	int capacity;
-};
+typedef struct _vector* vector;
+typedef int value_type;
 
 /* create a vector */
 vector vector_create()
