@@ -1,3 +1,11 @@
+/*
+ * stack/fun_game.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(n)
+ */
+
 #if 0
    1st step: A picks 1. B picks 3. B > A. So output is 2. A removes 1.
    2nd step: A picks 2. B picks 3. B > A. So output is 2. A removes 2.
@@ -10,13 +18,11 @@
 #include<malloc.h>
 
 /* Implement follow rule of game */
-void
-fun_game (int* arr , int size) 
+void fun_game (int* arr , int size) 
 {
    int A_picked_num;
    int B_picked_num;
    int index_A = 0;
-   
    int index_B = (size - 1);
   
    while (index_A < size && index_B > -1)
@@ -40,18 +46,20 @@ fun_game (int* arr , int size)
    }
 }
 
-int 
-main() 
+int main() 
 {
-    int n;
-    scanf("%d", &n);
-    int i_arr;
-    int *arr = (int *)malloc(n * sizeof(int));
-    for (i_arr = 0; i_arr < n; i_arr++)
-    {
-      scanf("%d", &arr[i_arr]);
-    }
-    fun_game(arr, n);
+   int n;
+   int i_arr;
+   int *arr = (int *)malloc(n * sizeof(int));
 
-    return 0;
+   scanf("%d", &n);
+
+   for (i_arr = 0; i_arr < n; i_arr++)
+   {
+      scanf("%d", &arr[i_arr]);
+   }
+
+   fun_game(arr, n);
+
+   return 0;
 }

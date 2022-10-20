@@ -1,16 +1,17 @@
-/**
- * KMP Algorithm for Pattern Searching
- * 
- * O(n)
- * */
+/*
+ * string/kmp_search.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(n)
+ */
 
 #include <stdio.h>
 
 #define IN(str) (scanf("%s", str))
 
 /* Compute LPS array */
-void 
-compute_LPS_array(char* pat, int M, int* lps)
+void compute_LPS_array(char* pat, int M, int* lps)
 {
     // length of the previous longest prefix suffix
     int len = 0;
@@ -47,8 +48,7 @@ compute_LPS_array(char* pat, int M, int* lps)
 }
 
 /* Implement KMP search */
-int 
-KMP_search(char* pat, char* txt)
+int KMP_search(char* pat, char* txt)
 {
     int M = strlen(pat);
     int N = strlen(txt);
@@ -93,13 +93,15 @@ KMP_search(char* pat, char* txt)
     return count;
 }
 
-int 
-main()
+int main()
 {
 	char P[100000];
 	char T[100000];
+
 	IN(P);
 	IN(T);
+
 	printf("%d", KMP_search(P, T));
+    
     return 0;
 }

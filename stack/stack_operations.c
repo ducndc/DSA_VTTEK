@@ -1,12 +1,20 @@
+/*
+ * stack/heap_sort.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(nlog(n))
+ */
+
 #include <stdio.h>
 
 typedef unsigned long int ULLI; 
 
 /* Find maximum value of element */
-ULLI  
-max_element (ULLI a[], ULLI n)
+ULLI max_element (ULLI a[], ULLI n)
 {
 	ULLI maximum = a[0];
+
 	for (ULLI i = 1; i < n; i++)
 	{	
 		if (maximum < a[i])
@@ -14,11 +22,11 @@ max_element (ULLI a[], ULLI n)
 			maximum = a[i];
 		}
 	}
+	
 	return maximum;
 }
 
-int 
-main()
+int main()
 {
 	ULLI n;
 	ULLI k;

@@ -1,4 +1,10 @@
-/**
+/*
+ * string/maximum_letter.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ *
+ * Algorithm Complexity: O(n)
+ *
  * Lonely Y loves his string  of lowercase letters, 
  * Y is about to escape so he should choose just one lowercase letter  
  * and carry all letters in  which is equal to  with himself.
@@ -6,15 +12,12 @@
  * Input
  * First line contains only , legnth of string .
  * Second line contains string  of lowercase letters.
- * 
- * O(n)
- * */
+ */
 
 #include <stdio.h>
 #include <string.h>
 
-int 
-main()
+int main()
 {
    char string[100000];
    int c = 0;
@@ -22,8 +25,8 @@ main()
    int x;
    int num;
    int max_count = -1;
-
    scanf("%d", &num);
+   
    scanf("%s", &string);
 
    while (string[c] != '\0') 
@@ -43,6 +46,7 @@ main()
    			max_count = count[c];
    		}
    }
+
    printf("%d", max_count);
          
    return 0;
