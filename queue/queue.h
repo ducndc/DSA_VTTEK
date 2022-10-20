@@ -1,7 +1,7 @@
-/**
- * queue.h
- * 
- * author: Chung Duc Nguyen Dang
+/*
+ * queue/lib/list.h
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
  */
 
 #ifndef __QUEUE__H__
@@ -14,7 +14,7 @@ typedef int value_type;
 struct node {
     value_type data;
     node_t *next;
-}
+};
 
 struct queue {
     int size;
@@ -24,7 +24,7 @@ struct queue {
     void (*enqueue)(queue_t *, value_type);
     value_type (*dequeue)(queue_t *);
     node_t *(*create_node)(value_type);   
-}
+};
 
 /* Public function in queue */
 void enqueue(queue_t *queue, value_type data);

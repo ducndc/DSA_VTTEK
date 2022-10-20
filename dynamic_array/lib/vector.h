@@ -1,9 +1,8 @@
-/**
- * vector.h
- * 
- * author: Duc
- * 
- * */
+/*
+ * dynamic_array/lib/vector.h
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang 
+ */
 
 #ifndef __VECTOR_H__
 #define __VECTOR_H__

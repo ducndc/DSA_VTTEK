@@ -1,9 +1,8 @@
-/**
- * list.h
- * 
- * author: Duc
- * 
- * */
+/*
+ * linked_list/lib/list.h
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang
+ */
 
 #ifndef __LIST_H__
 #define __LIST_H__
@@ -52,5 +51,3 @@ list_t create_linked_list();
 node_t *create_node(value_type value);
 
 #endif
-
-

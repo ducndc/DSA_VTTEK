@@ -1,10 +1,8 @@
-/**
- * problem.c
- * 
- * author: Duc
- * 
- * Algorithm Complexity: O(n)
- * 
+/*
+ * dynamic_array/src/action_follow_k.c
+ *
+ * Copyright (C) 2022 Chung Duc Nguyen Dang 
+ *
  * 
  * 5 -> K = 5
  * 1 -> k = 1
@@ -21,7 +19,9 @@
  * 
  * output 2 1
  * 
- * */
+ * Algorithm Complexity: O(n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -33,6 +33,7 @@
 #define INT(x) (scanf("%d", &x))
 #define PRINT(s) (printf("%d", s))
 
+/* Get gcd of two number */
 int gcd(int a, int b)
 {
     if (b == 0) 
@@ -45,9 +46,11 @@ int gcd(int a, int b)
     }
 }
 
+/* Get gcd of n number */
 int get_gcd_in_range(vector v, int left, int right)
 {
     int result = vector_get(v, 0);
+
     if (left < 0)
     {
         left = 0;
@@ -64,20 +67,23 @@ int get_gcd_in_range(vector v, int left, int right)
             return 1;
         }
     }
+
     return result;
 }
 
+/* Find x th smallest in the dynamic array */
 int x_th_smallest(vector v, int x)
 {
     vector_sort(v); 
+
     return (vector_get(v, x-1));
 }
 
+/* Solve the action follow k problem */
 int main(int argc, char const *argv[])
 {
     vector v;
     v = vector_create();
-
     int q;
     INT(q);
 
